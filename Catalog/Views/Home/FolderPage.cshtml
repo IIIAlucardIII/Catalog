@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "FolderPageView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Catalog.Models.FolderModel
+
+<h3>@Model.Name</h3>
+<a href="@Url.Action("Export", "Export")" class="btn btn-outline-dark">Export</a>
+
+@foreach (var child in Model.Children)
+{
+    <li><a href="@Model.Name/@child.Name">@child.Name</a></li>
+}
